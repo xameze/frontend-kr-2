@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Портфолио - Учебный дневник</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <div class="logo-icon">💼</div>
+                    <h1>Подгузов Максим</h1>
+                </div>
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="../index.html" class="nav-link">Главная</a></li>
+                        <li><a href="projects.html" class="nav-link">Проекты</a></li>
+                        <li><a href="diary.html" class="nav-link active">Дневник</a></li>
+                        <li><a href="contacts.html" class="nav-link">Контакты</a></li>
+                    </ul>
+                </nav>
+                <div class="mobile-menu-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Diary Section -->
+        <section class="diary-page">
+            <div class="container">
+                <div class="diary-content">
+                    <!-- Progress Section -->
+                    <div class="diary-section">
+                        <h2>Мой учебный прогресс</h2>
+                        <div class="progress-list" id="progressList">
+                            <!-- Progress items will be loaded here -->
+                        </div>
+                        <button class="btn btn-primary" id="addProgressBtn">
+                            ➕ Добавить запись
+                        </button>
+                    </div>
+
+                    <!-- Courses Section -->
+                    <div class="diary-section">
+                        <h2>Текущие курсы</h2>
+                        <div class="courses-list" id="coursesList">
+                            <!-- Courses will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Подгузов Максим. Все права защищены.</p>
+            <div class="footer-links">
+                <a href="mailto:student@edu.ru">📧 student@edu.ru</a>
+                <a href="https://github.com/username">🐙 GitHub: xameze</a>
+                <span>🏠 Москва, Россия</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Add Progress Modal -->
+    <div class="modal" id="progressModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Добавить учебную запись</h3>
+                <button class="modal-close" id="closeProgressModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form class="progress-form" id="progressForm">
+                    <div class="form-group">
+                        <label for="progressDate">Дата:</label>
+                        <input type="date" id="progressDate" name="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="progressTask">Задача:</label>
+                        <input type="text" id="progressTask" name="task" placeholder="Например: Верстка макета сайта" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="progressStatus">Статус:</label>
+                        <select id="progressStatus" name="status" required>
+                            <option value="completed">✓ Выполнено</option>
+                            <option value="in-progress">🔄 In progress</option>
+                            <option value="planned">📅 Запланировано</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="cancelProgress">Отмена</button>
+                <button class="btn btn-primary" id="saveProgress">Сохранить запись</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Course Modal -->
+    <div class="modal" id="courseModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Добавить курс</h3>
+                <button class="modal-close" id="closeCourseModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form class="course-form" id="courseForm">
+                    <div class="form-group">
+                        <label for="courseName">Название курса:</label>
+                        <input type="text" id="courseName" name="name" placeholder="Например: Веб-разработка" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="courseProgress">Прогресс (%):</label>
+                        <input type="range" id="courseProgress" name="progress" min="0" max="100" value="0">
+                        <div class="progress-value">
+                            <span id="progressValue">0%</span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="cancelCourse">Отмена</button>
+                <button class="btn btn-primary" id="saveCourse">Сохранить курс</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../scripts/diary.js"></script>
+</body>
+</html>

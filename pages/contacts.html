@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Портфолио - Контакты</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <div class="logo-icon">💼</div>
+                    <h1>Подгузов Максим</h1>
+                </div>
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="../index.html" class="nav-link">Главная</a></li>
+                        <li><a href="projects.html" class="nav-link">Проекты</a></li>
+                        <li><a href="diary.html" class="nav-link">Дневник</a></li>
+                        <li><a href="contacts.html" class="nav-link active">Контакты</a></li>
+                    </ul>
+                </nav>
+                <div class="mobile-menu-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Contacts Section -->
+        <section class="contacts-page">
+            <div class="container">
+                <div class="contacts-content">
+                    <!-- Contact Form -->
+                    <div class="contact-form-section">
+                        <h2>Свяжитесь со мной</h2>
+                        <form class="contact-form-main" id="contactFormMain">
+                            <div class="form-group">
+                                <label for="contactName">Имя:</label>
+                                <input type="text" id="contactName" name="name" placeholder="Введите ваше имя" required>
+                                <span class="error-message" id="nameError"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="contactEmail">Email:</label>
+                                <input type="email" id="contactEmail" name="email" placeholder="Введите ваш email" required>
+                                <span class="error-message" id="emailError"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="contactMessage">Сообщение:</label>
+                                <textarea id="contactMessage" name="message" rows="5" placeholder="Введите ваше сообщение..." required></textarea>
+                                <span class="error-message" id="messageError"></span>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-submit">
+                                📨 Отправить сообщение
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Contact Info -->
+                    <div class="contact-info-section">
+                        <h3>Контакты</h3>
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <div class="contact-icon">📧</div>
+                                <div class="contact-text">
+                                    <strong>Email</strong>
+                                    <p>student@edu.ru</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">🐙</div>
+                                <div class="contact-text">
+                                    <strong>GitHub</strong>
+                                    <p>username</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">🏠</div>
+                                <div class="contact-text">
+                                    <strong>Местоположение</strong>
+                                    <p>Город, Страна</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Additional Info -->
+                        <div class="additional-info">
+                            <h4>README.md</h4>
+                            <div class="readme-content">
+                                <p><strong>Дата:</strong> 2025-10-08</p>
+                                <p><strong>Страница:</strong> 3/6</p>
+                                <p>Эта страница контактов является частью моего учебного портфолио. Вы можете связаться со мной через форму или используя контактные данные слева.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Подгузов Максим. Все права защищены.</p>
+            <div class="footer-links">
+                <a href="mailto:student@edu.ru">📧 student@edu.ru</a>
+                <a href="https://github.com/username">🐙 GitHub: xameze</a>
+                <span>🏠 Москва, Россия</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div class="modal" id="successModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Сообщение отправлено!</h3>
+                <button class="modal-close" id="closeSuccessModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="success-content">
+                    <div class="success-icon">✅</div>
+                    <p>Ваше сообщение было успешно отправлено. Я свяжусь с вами в ближайшее время.</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" id="closeSuccess">Закрыть</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../scripts/contacts.js"></script>
+</body>
+</html>

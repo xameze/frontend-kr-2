@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Портфолио - Проекты</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <div class="logo-icon">💼</div>
+                    <h1>Подгузов Максим</h1>
+                </div>
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="../index.html" class="nav-link">Главная</a></li>
+                        <li><a href="projects.html" class="nav-link active">Проекты</a></li>
+                        <li><a href="diary.html" class="nav-link">Дневник</a></li>
+                        <li><a href="contacts.html" class="nav-link">Контакты</a></li>
+                    </ul>
+                </nav>
+                <div class="mobile-menu-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Projects Section -->
+        <section class="projects-page">
+            <div class="container">
+                <div class="page-header">
+                    <h2>Мои проекты</h2>
+                    <div class="project-filters">
+                        <button class="filter-btn active" data-filter="all">Все</button>
+                        <button class="filter-btn" data-filter="html">HTML</button>
+                        <button class="filter-btn" data-filter="js">JS</button>
+                        <button class="filter-btn" data-filter="react">React</button>
+                    </div>
+                </div>
+
+                <div class="projects-grid-full">
+                    <!-- Project 1 -->
+                    <div class="project-card-full" data-category="html">
+                        <div class="project-image">
+                            <img src="../images/fns_1.jpg" alt="Личный сайт" class="student-photo">
+                        </div>
+                        <div class="project-info">
+                            <h3>Личный сайт</h3>
+                            <p class="project-tech">HTML, CSS</p>
+                            <p class="project-description">Адаптивный веб-сайт с современным дизайном и оптимизацией для всех устройств</p>
+                            <button class="btn-view-details" data-project="1">Подробнее</button>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="project-card-full" data-category="js">
+                        <div class="project-image">
+                            <img src="../images/sample-todo-app.png" alt="Todo-приложение" class="student-photo">
+                        </div>
+                        <div class="project-info">
+                            <h3>Todo-приложение</h3>
+                            <p class="project-tech">JavaScript</p>
+                            <p class="project-description">Интерактивное приложение для управления задачами с локальным хранением данных</p>
+                            <button class="btn-view-details" data-project="2">Подробнее</button>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="project-card-full" data-category="react">
+                        <div class="project-image">
+                            <img src="../images/c67ee31b0898a987bcbce5a2086ec2db.jpg" alt="Интернет-магазин" class="student-photo">
+                        </div>
+                        <div class="project-info">
+                            <h3>Интернет-магазин</h3>
+                            <p class="project-tech">React</p>
+                            <p class="project-description">Полнофункциональный онлайн-магазин с корзиной покупок и системой заказов</p>
+                            <button class="btn-view-details" data-project="3">Подробнее</button>
+                        </div>
+                    </div>
+
+                    <!-- Project 4 -->
+                    <div class="project-card-full" data-category="html">
+                        <div class="project-image">
+                            <img src="../images/41a95a177155071.64d18b45f1484.png" alt="Портфолио" class="student-photo">
+                        </div>
+                        <div class="project-info">
+                            <h3>Портфолио</h3>
+                            <p class="project-tech">Bootstrap</p>
+                            <p class="project-description">Современное портфолио с использованием фреймворка Bootstrap 5</p>
+                            <button class="btn-view-details" data-project="4">Подробнее</button>
+                        </div>
+                    </div>
+
+                    <!-- Project 5 -->
+                    <div class="project-card-full" data-category="js">
+                        <div class="project-image">
+                            <img src="../images/1693c1159858995.63a763a7132cd.jpg" alt="Погодное приложение" class="student-photo">
+                        </div>
+                        <div class="project-info">
+                            <h3>Погодное приложение</h3>
+                            <p class="project-tech">JavaScript</p>
+                            <p class="project-description">Приложение для просмотра погоды с использованием API и геолокации</p>
+                            <button class="btn-view-details" data-project="5">Подробнее</button>
+                        </div>
+                    </div>
+
+                    <!-- Project 6 -->
+                    <div class="project-card-full" data-category="react">
+                        <div class="project-image">
+                            <img src="../images/чат.jpg" alt="Чат приложение" class="student-photo">
+                        </div>
+                        <div class="project-info">
+                            <h3>Чат приложение</h3>
+                            <p class="project-tech">React</p>
+                            <p class="project-description">Real-time чат приложение с комнатами и уведомлениями</p>
+                            <button class="btn-view-details" data-project="6">Подробнее</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Подгузов Максим. Все права защищены.</p>
+            <div class="footer-links">
+                <a href="mailto:student@edu.ru">📧 student@edu.ru</a>
+                <a href="https://github.com/username">🐙 GitHub: xameze</a>
+                <span>🏠 Москва, Россия</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Project Details Modal -->
+    <div class="modal" id="projectModal">
+        <div class="modal-content project-modal-content">
+            <div class="modal-header">
+                <h3 id="modalProjectTitle">Название проекта</h3>
+                <button class="modal-close" id="closeProjectModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="project-modal-grid">
+                    <div class="project-modal-images">
+                        <div class="main-image">
+                            <img id="modalMainImage" src="" alt="Главное изображение проекта">
+                        </div>
+                        <div class="image-thumbnails">
+                            <div class="thumbnail active" data-image="1">
+                                <img src="" alt="Миниатюра 1">
+                            </div>
+                            <div class="thumbnail" data-image="2">
+                                <img src="" alt="Миниатюра 2">
+                            </div>
+                            <div class="thumbnail" data-image="3">
+                                <img src="" alt="Миниатюра 3">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-modal-info">
+                        <div class="project-meta">
+                            <span class="project-category" id="modalProjectCategory">HTML, CSS</span>
+                            <span class="project-date" id="modalProjectDate">2025-10-04</span>
+                        </div>
+                        <div class="project-description-full">
+                            <h4>Описание проекта</h4>
+                            <p id="modalProjectDescription">Полное описание проекта будет здесь...</p>
+                        </div>
+                        <div class="project-features">
+                            <h4>Особенности</h4>
+                            <ul id="modalProjectFeatures">
+                                <li>Адаптивный дизайн</li>
+                                <li>Современный интерфейс</li>
+                                <li>Оптимизация производительности</li>
+                            </ul>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-primary" id="modalLiveLink" target="_blank">
+                                🌐 Живая версия
+                            </a>
+                            <a href="#" class="btn btn-outline" id="modalSourceLink" target="_blank">
+                                📁 Исходный код
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../scripts/projects.js"></script>
+</body>
+</html>

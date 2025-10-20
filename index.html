@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Портфолио - Главная</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <div class="logo-icon">💼</div>
+                    <h1>Подгузов Максим</h1>
+                </div>
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="nav-link active">Главная</a></li>
+                        <li><a href="pages/projects.html" class="nav-link">Проекты</a></li>
+                        <li><a href="pages/diary.html" class="nav-link">Дневник</a></li>
+                        <li><a href="pages/contacts.html" class="nav-link">Контакты</a></li>
+                    </ul>
+                </nav>
+                <div class="mobile-menu-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h2 class="hero-title">Привет! Я <span class="highlight">студент</span></h2>
+                        <p class="hero-subtitle">группы <strong>ЭФБО-15-24</strong></p>
+                        <p class="hero-description">Увлекаюсь веб-разработкой и создаю современные цифровые решения</p>
+                        <div class="hero-buttons">
+                            <a href="assets/resume.pdf" download class="btn btn-primary">
+                                📄 Скачать резюме
+                            </a>
+                            <button class="btn btn-secondary" id="uploadResumeBtn">
+                                📤 Загрузить резюме
+                            </button>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <div class="photo-container">
+                            <img src="images/фото студента.jpg" alt="Фото студента" class="student-photo">
+                            <div class="photo-frame"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Content Sections -->
+        <section class="content-sections">
+            <div class="container">
+                <div class="sections-grid">
+                    <!-- Skills Section -->
+                    <div class="section-card">
+                        <div class="section-header">
+                            <h3>Мои навыки</h3>
+                        </div>
+                        <div class="skills-list">
+                            <div class="skill-row">
+                                <span class="skill-name">HTML/CSS</span>
+                                <div class="skill-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 90%"></div>
+                                    </div>
+                                </div>
+                                <span class="skill-percent">90%</span>
+                            </div>
+                            <div class="skill-row">
+                                <span class="skill-name">JavaScript</span>
+                                <div class="skill-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 80%"></div>
+                                    </div>
+                                </div>
+                                <span class="skill-percent">80%</span>
+                            </div>
+                            <div class="skill-row">
+                                <span class="skill-name">Bootstrap</span>
+                                <div class="skill-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 85%"></div>
+                                    </div>
+                                </div>
+                                <span class="skill-percent">85%</span>
+                            </div>
+                            <div class="skill-row">
+                                <span class="skill-name">React</span>
+                                <div class="skill-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 60%"></div>
+                                    </div>
+                                </div>
+                                <span class="skill-percent">60%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Projects Section -->
+                    <div class="section-card">
+                        <div class="section-header">
+                            <h3>Лучшие проекты</h3>
+                        </div>
+                        <div class="projects-mini-grid">
+                            <div class="mini-project-card">
+                                <div class="project-number">П1</div>
+                                <h4>Личный сайт</h4>
+                                <p>HTML, CSS</p>
+                            </div>
+                            <div class="mini-project-card">
+                                <div class="project-number">П2</div>
+                                <h4>Todo App</h4>
+                                <p>JavaScript</p>
+                            </div>
+                            <div class="mini-project-card">
+                                <div class="project-number">П3</div>
+                                <h4>Интернет-магазин</h4>
+                                <p>React</p>
+                            </div>
+                        </div>
+                        <div class="view-all">
+                            <a href="pages/projects.html" class="view-all-link">Все проекты →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Подгузов Максим. Все права защищены.</p>
+            <div class="footer-links">
+                <a href="mailto:student@edu.ru">📧 student@edu.ru</a>
+                <a href="https://github.com/username">🐙 GitHub: xameze</a>
+                <span>🏠 Москва, Россия</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal for Resume Upload -->
+    <div class="modal" id="resumeModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Загрузка резюме</h3>
+                <button class="modal-close" id="closeResumeModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-icon">📄</div>
+                    <p>Перетащите файл сюда или нажмите для выбора</p>
+                    <input type="file" id="resumeFile" accept=".pdf,.doc,.docx" style="display: none;">
+                    <button class="btn btn-outline" id="selectFileBtn">Выбрать файл</button>
+                </div>
+                <div class="upload-info">
+                    <p>Поддерживаемые форматы: PDF, DOC, DOCX</p>
+                    <p>Максимальный размер: 5MB</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="cancelUpload">Отмена</button>
+                <button class="btn btn-primary" id="confirmUpload" disabled>Загрузить</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="modal" id="contactModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Свяжитесь со мной</h3>
+                <button class="modal-close" id="closeContactModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Имя:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Сообщение:</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="cancelContact">Отмена</button>
+                <button class="btn btn-primary" id="sendMessage">Отправить сообщение</button>
+            </div>
