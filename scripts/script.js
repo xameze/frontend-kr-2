@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Mobile menu
+    
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const navList = document.querySelector('.nav-list');
     
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Resume Upload Modal
+    
     const resumeModal = document.getElementById('resumeModal');
     const uploadResumeBtn = document.getElementById('uploadResumeBtn');
     const closeResumeModal = document.getElementById('closeResumeModal');
@@ -32,12 +32,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const confirmUpload = document.getElementById('confirmUpload');
     const uploadArea = document.getElementById('uploadArea');
 
-    // Open resume modal
+    
     uploadResumeBtn.addEventListener('click', () => {
         resumeModal.classList.add('active');
     });
 
-    // Close resume modal
+    
     function closeResumeModalFunc() {
         resumeModal.classList.remove('active');
         resumeFile.value = '';
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
     closeResumeModal.addEventListener('click', closeResumeModalFunc);
     cancelUpload.addEventListener('click', closeResumeModalFunc);
 
-    // File selection
+    
     selectFileBtn.addEventListener('click', () => {
         resumeFile.click();
     });
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Drag and drop
+    
     uploadArea.addEventListener('dragover', (e) => {
         e.preventDefault();
         uploadArea.classList.add('dragover');
@@ -93,16 +93,15 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Confirm upload
+    
     confirmUpload.addEventListener('click', () => {
         const file = resumeFile.files[0];
         if (file) {
-            // Здесь будет логика загрузки на сервер
-            // Для демонстрации просто покажем сообщение
+            
             alert(`Резюме "${file.name}" успешно загружено!`);
             closeResumeModalFunc();
             
-            // Обновляем ссылку для скачивания
+            
             const downloadLink = document.querySelector('a[download]');
             if (downloadLink) {
                 const newBlob = URL.createObjectURL(file);
@@ -111,19 +110,19 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Contact Modal
+    
     const contactModal = document.getElementById('contactModal');
     const closeContactModal = document.getElementById('closeContactModal');
     const cancelContact = document.getElementById('cancelContact');
     const contactForm = document.getElementById('contactForm');
     const sendMessage = document.getElementById('sendMessage');
 
-    // Function to open contact modal (will be called from contacts page)
+    
     window.openContactModal = function() {
         contactModal.classList.add('active');
     };
 
-    // Close contact modal
+    
     function closeContactModalFunc() {
         contactModal.classList.remove('active');
         contactForm.reset();
@@ -132,15 +131,14 @@ document.addEventListener('DOMContentLoaded', function() {
     closeContactModal.addEventListener('click', closeContactModalFunc);
     cancelContact.addEventListener('click', closeContactModalFunc);
 
-    // Send message
+    
     sendMessage.addEventListener('click', () => {
         const name = document.getElementById('name').value;
         const email = document.getElementById('email').value;
         const message = document.getElementById('message').value;
 
         if (name && email && message) {
-            // Здесь будет логика отправки формы
-            // Для демонстрации просто покажем сообщение
+            
             alert(`Сообщение от ${name} отправлено!`);
             closeContactModalFunc();
         } else {
@@ -148,7 +146,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Close modals on outside click
+    
     window.addEventListener('click', (e) => {
         if (e.target === resumeModal) {
             closeResumeModalFunc();
@@ -158,7 +156,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Animation on scroll
+    
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -173,7 +171,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, observerOptions);
 
-    // Observe elements for animation
+    
     document.querySelectorAll('.section-card, .mini-project-card').forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(20px)';
@@ -181,7 +179,7 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(el);
     });
 });
-// Helper function for diary (if needed in main script)
+
 function formatDateForDiary(dateString) {
     const date = new Date(dateString);
     const day = date.getDate();

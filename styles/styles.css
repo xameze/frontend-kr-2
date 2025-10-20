@@ -1,4 +1,4 @@
-/* Reset and Base Styles */
+
 * {
     margin: 0;
     padding: 0;
@@ -34,7 +34,7 @@ body {
     padding: 0 2rem;
 }
 
-/* Header */
+
 .header {
     background: var(--background);
     border-bottom: 1px solid var(--border);
@@ -110,7 +110,7 @@ body {
     transition: var(--transition);
 }
 
-/* Hero Section */
+
 .hero {
     padding: 4rem 0;
     background: linear-gradient(135deg, var(--surface) 0%, var(--background) 100%);
@@ -231,7 +231,7 @@ body {
     z-index: -1;
 }
 
-/* Content Sections */
+
 .content-sections {
     padding: 4rem 0;
     background: var(--background);
@@ -263,7 +263,7 @@ body {
     color: var(--text-primary);
 }
 
-/* Skills List */
+
 .skills-list {
     display: flex;
     flex-direction: column;
@@ -307,7 +307,7 @@ body {
     text-align: right;
 }
 
-/* Projects Mini Grid */
+
 .projects-mini-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -364,7 +364,7 @@ body {
     color: var(--primary-dark);
 }
 
-/* Footer */
+
 .footer {
     background: var(--text-primary);
     color: white;
@@ -390,7 +390,7 @@ body {
     color: white;
 }
 
-/* Modal Styles */
+
 .modal {
     display: none;
     position: fixed;
@@ -458,7 +458,7 @@ body {
     border-top: 1px solid var(--border);
 }
 
-/* Upload Area */
+
 .upload-area {
     border: 2px dashed var(--border);
     border-radius: var(--radius);
@@ -495,7 +495,7 @@ body {
     margin-bottom: 0.25rem;
 }
 
-/* Contact Form */
+
 .contact-form {
     display: flex;
     flex-direction: column;
@@ -530,7 +530,7 @@ body {
     box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
 }
 
-/* Responsive Design */
+
 @media (max-width: 768px) {
     .container {
         padding: 0 1rem;
@@ -587,7 +587,7 @@ body {
         margin: 1rem;
     }
 }
-/* Projects Page Styles */
+
 .projects-page {
     padding: 2rem 0 4rem;
     background: var(--surface);
@@ -638,7 +638,7 @@ body {
     border-color: var(--primary-color);
 }
 
-/* Projects Grid Full */
+
 .projects-grid-full {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -720,7 +720,7 @@ body {
     background: var(--background);
 }
 
-/* Project Modal */
+
 .project-modal-content {
     max-width: 900px;
     width: 95%;
@@ -847,7 +847,7 @@ body {
     flex-wrap: wrap;
 }
 
-/* Responsive Design for Projects */
+
 @media (max-width: 768px) {
     .page-header {
         flex-direction: column;
@@ -891,7 +891,7 @@ body {
         min-width: 60px;
     }
 }
-/* Diary Page Styles */
+
 .diary-page {
     padding: 2rem 0 4rem;
     background: var(--surface);
@@ -922,7 +922,7 @@ body {
     border-bottom: 2px solid var(--border);
 }
 
-/* Progress List */
+
 .progress-list {
     display: flex;
     flex-direction: column;
@@ -989,7 +989,7 @@ body {
     50% { opacity: 0.7; }
 }
 
-/* Courses List */
+
 .courses-list {
     display: flex;
     flex-direction: column;
@@ -1059,7 +1059,7 @@ body {
     color: var(--primary-color);
 }
 
-/* Range Input Styles */
+
 .progress-value {
     text-align: center;
     margin-top: 0.5rem;
@@ -1097,7 +1097,7 @@ input[type="range"]::-moz-range-thumb {
     box-shadow: var(--shadow);
 }
 
-/* Form Styles for Diary */
+
 .progress-form,
 .course-form {
     display: flex;
@@ -1133,7 +1133,7 @@ input[type="range"]::-moz-range-thumb {
     box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
 }
 
-/* Responsive Design for Diary */
+
 @media (max-width: 768px) {
     .diary-content {
         grid-template-columns: 1fr;
@@ -1176,7 +1176,7 @@ input[type="range"]::-moz-range-thumb {
         padding: 1rem;
     }
 }
-/* Contacts Page Styles */
+
 .contacts-page {
     padding: 2rem 0 4rem;
     background: var(--surface);
@@ -1190,7 +1190,7 @@ input[type="range"]::-moz-range-thumb {
     align-items: start;
 }
 
-/* Contact Form Section */
+
 .contact-form-section {
     background: var(--background);
     padding: 2.5rem;
@@ -1309,7 +1309,7 @@ input[type="range"]::-moz-range-thumb {
     100% { transform: rotate(360deg); }
 }
 
-/* Contact Info Section */
+
 .contact-info-section {
     background: var(--background);
     padding: 2.5rem;
@@ -1376,7 +1376,7 @@ input[type="range"]::-moz-range-thumb {
     font-size: 0.95rem;
 }
 
-/* Additional Info */
+
 .additional-info {
     background: var(--surface);
     padding: 1.5rem;
@@ -1412,7 +1412,7 @@ input[type="range"]::-moz-range-thumb {
     color: var(--text-primary);
 }
 
-/* Success Modal */
+
 .success-content {
     text-align: center;
     padding: 1rem;
@@ -1429,7 +1429,7 @@ input[type="range"]::-moz-range-thumb {
     line-height: 1.6;
 }
 
-/* Responsive Design for Contacts */
+
 @media (max-width: 968px) {
     .contacts-content {
         grid-template-columns: 1fr;
@@ -1479,7 +1479,7 @@ input[type="range"]::-moz-range-thumb {
     }
 }
 
-/* Animation for form elements */
+
 .contact-form-main .form-group {
     opacity: 0;
     transform: translateY(20px);

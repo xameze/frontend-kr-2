@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Project data
+    
     const projectsData = {
         1: {
             title: "Личный сайт",
@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
-    // Modal elements
+    
     const projectModal = document.getElementById('projectModal');
     const closeProjectModal = document.getElementById('closeProjectModal');
     const modalTitle = document.getElementById('modalProjectTitle');
@@ -111,15 +111,15 @@ document.addEventListener('DOMContentLoaded', function() {
     const modalSourceLink = document.getElementById('modalSourceLink');
     const modalMainImage = document.getElementById('modalMainImage');
 
-    // Filter functionality
+    
     const filterBtns = document.querySelectorAll('.filter-btn');
     const projectCards = document.querySelectorAll('.project-card-full');
 
     filterBtns.forEach(btn => {
         btn.addEventListener('click', function() {
-            // Remove active class from all buttons
+            
             filterBtns.forEach(b => b.classList.remove('active'));
-            // Add active class to clicked button
+            
             this.classList.add('active');
             
             const filter = this.getAttribute('data-filter');
@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // View details functionality
+    
     const viewDetailsBtns = document.querySelectorAll('.btn-view-details');
     
     viewDetailsBtns.forEach(btn => {
@@ -151,13 +151,13 @@ document.addEventListener('DOMContentLoaded', function() {
             const project = projectsData[projectId];
             
             if (project) {
-                // Fill modal with project data
+                
                 modalTitle.textContent = project.title;
                 modalCategory.textContent = project.category;
                 modalDate.textContent = project.date;
                 modalDescription.textContent = project.description;
                 
-                // Clear and fill features
+                
                 modalFeatures.innerHTML = '';
                 project.features.forEach(feature => {
                     const li = document.createElement('li');
@@ -165,54 +165,53 @@ document.addEventListener('DOMContentLoaded', function() {
                     modalFeatures.appendChild(li);
                 });
                 
-                // Set links
+                
                 modalLiveLink.href = project.liveLink;
                 modalSourceLink.href = project.sourceLink;
                 
-                // Set images (placeholder - in real project use actual image paths)
+                
                 modalMainImage.src = `../images/${project.images[0]}`;
                 modalMainImage.alt = project.title;
                 
-                // Open modal
+                
                 projectModal.classList.add('active');
             }
         });
     });
 
-    // Close modal
+    
     function closeProjectModalFunc() {
         projectModal.classList.remove('active');
     }
 
     closeProjectModal.addEventListener('click', closeProjectModalFunc);
 
-    // Close modal on outside click
+    
     window.addEventListener('click', (e) => {
         if (e.target === projectModal) {
             closeProjectModalFunc();
         }
     });
 
-    // Image thumbnail functionality
+    
     document.addEventListener('click', function(e) {
         if (e.target.closest('.thumbnail')) {
             const thumbnail = e.target.closest('.thumbnail');
             const imageIndex = thumbnail.getAttribute('data-image');
             
-            // Remove active class from all thumbnails
+            
             document.querySelectorAll('.thumbnail').forEach(t => {
                 t.classList.remove('active');
             });
             
-            // Add active class to clicked thumbnail
+            
             thumbnail.classList.add('active');
             
-            // Change main image (in real project, use actual image switching)
-            // modalMainImage.src = `../images/projects/${currentProject.images[imageIndex - 1]}`;
+            
         }
     });
 
-    // Mobile menu functionality (reuse from main script)
+  
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const navList = document.querySelector('.nav-list');
     
@@ -235,7 +234,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Animation on scroll for projects
+    
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -250,7 +249,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, observerOptions);
 
-    // Observe project cards for animation
+    
     document.querySelectorAll('.project-card-full').forEach(card => {
         card.style.opacity = '0';
         card.style.transform = 'translateY(20px)';

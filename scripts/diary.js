@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Elements
+    
     const progressList = document.getElementById('progressList');
     const coursesList = document.getElementById('coursesList');
     const addProgressBtn = document.getElementById('addProgressBtn');
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const courseProgress = document.getElementById('courseProgress');
     const progressValue = document.getElementById('progressValue');
 
-    // Sample data (in real app, this would come from a database)
+    
     let progressData = JSON.parse(localStorage.getItem('diaryProgress')) || [
         { id: 1, date: '2024-12-15', task: 'Верстка макета сайта', status: 'completed' },
         { id: 2, date: '2024-12-10', task: 'JavaScript основы', status: 'completed' },
@@ -30,24 +30,24 @@ document.addEventListener('DOMContentLoaded', function() {
         { id: 3, name: 'React', progress: 50 }
     ];
 
-    // Initialize
+    
     renderProgressList();
     renderCoursesList();
 
-    // Progress range update
+    
     courseProgress.addEventListener('input', function() {
         progressValue.textContent = this.value + '%';
     });
 
-    // Open progress modal
+    
     addProgressBtn.addEventListener('click', function() {
-        // Set today's date as default
+        
         const today = new Date().toISOString().split('T')[0];
         document.getElementById('progressDate').value = today;
         progressModal.classList.add('active');
     });
 
-    // Open course modal (will be called from course addition)
+    
     function openCourseModal() {
         courseProgress.value = 0;
         progressValue.textContent = '0%';
@@ -55,13 +55,13 @@ document.addEventListener('DOMContentLoaded', function() {
         courseModal.classList.add('active');
     }
 
-    // Close progress modal
+    
     function closeProgressModalFunc() {
         progressModal.classList.remove('active');
         progressForm.reset();
     }
 
-    // Close course modal
+    
     function closeCourseModalFunc() {
         courseModal.classList.remove('active');
         courseForm.reset();
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
     closeCourseModal.addEventListener('click', closeCourseModalFunc);
     cancelCourse.addEventListener('click', closeCourseModalFunc);
 
-    // Save progress
+    
     saveProgress.addEventListener('click', function() {
         const date = document.getElementById('progressDate').value;
         const task = document.getElementById('progressTask').value;
@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 status: status
             };
 
-            progressData.unshift(newProgress); // Add to beginning
+            progressData.unshift(newProgress); 
             localStorage.setItem('diaryProgress', JSON.stringify(progressData));
             renderProgressList();
             closeProgressModalFunc();
@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Save course
+    
     saveCourse.addEventListener('click', function() {
         const name = document.getElementById('courseName').value;
         const progress = parseInt(courseProgress.value);
@@ -116,22 +116,22 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Render progress list
+    
     function renderProgressList() {
         progressList.innerHTML = '';
 
-        // Sort by date (newest first)
+        
         const sortedProgress = [...progressData].sort((a, b) => new Date(b.date) - new Date(a.date));
 
         sortedProgress.forEach(item => {
             const progressItem = document.createElement('div');
             progressItem.className = 'progress-item';
             
-            // Format date
+           
             const dateObj = new Date(item.date);
             const formattedDate = `${dateObj.getDate()} ${getMonthName(dateObj.getMonth())}`;
 
-            // Status icon
+            
             let statusIcon = '';
             let statusClass = '';
             switch(item.status) {
@@ -158,7 +158,7 @@ document.addEventListener('DOMContentLoaded', function() {
             progressList.appendChild(progressItem);
         });
 
-        // Add "Add Course" button if no courses exist
+        
         if (coursesList.children.length === 0) {
             const addCourseBtn = document.createElement('button');
             addCourseBtn.className = 'btn btn-outline';
@@ -168,7 +168,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Render courses list
+    
     function renderCoursesList() {
         coursesList.innerHTML = '';
 
@@ -195,14 +195,14 @@ document.addEventListener('DOMContentLoaded', function() {
             coursesList.appendChild(courseItem);
         });
 
-        // Add "Add Course" button
+        
         const addCourseBtn = document.createElement('button');
         addCourseBtn.className = 'btn btn-outline';
         addCourseBtn.textContent = '➕ Добавить курс';
         addCourseBtn.addEventListener('click', openCourseModal);
         coursesList.appendChild(addCourseBtn);
 
-        // Add event listeners to edit buttons
+        
         document.querySelectorAll('.course-edit-btn').forEach(btn => {
             btn.addEventListener('click', function() {
                 const courseId = parseInt(this.getAttribute('data-id'));
@@ -213,7 +213,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     courseProgress.value = course.progress;
                     progressValue.textContent = course.progress + '%';
                     
-                    // Update save button to handle edit
+                    
                     saveCourse.textContent = 'Обновить курс';
                     saveCourse.onclick = function() {
                         updateCourse(courseId);
@@ -225,7 +225,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Update course
+    
     function updateCourse(courseId) {
         const name = document.getElementById('courseName').value;
         const progress = parseInt(courseProgress.value);
@@ -240,7 +240,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 renderCoursesList();
                 closeCourseModalFunc();
                 
-                // Reset save button to normal
+                
                 saveCourse.textContent = 'Сохранить курс';
                 saveCourse.onclick = function() {
                     saveCourse.click();
@@ -251,7 +251,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Helper function to get month name
+    
     function getMonthName(monthIndex) {
         const months = [
             'янв', 'фев', 'мар', 'апр', 'май', 'июн',
@@ -260,14 +260,14 @@ document.addEventListener('DOMContentLoaded', function() {
         return months[monthIndex];
     }
 
-    // Close modals on outside click
+    
     window.addEventListener('click', (e) => {
         if (e.target === progressModal) {
             closeProgressModalFunc();
         }
         if (e.target === courseModal) {
             closeCourseModalFunc();
-            // Reset save button to normal
+            
             saveCourse.textContent = 'Сохранить курс';
             saveCourse.onclick = function() {
                 saveCourse.click();
@@ -275,7 +275,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Mobile menu functionality
+    
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const navList = document.querySelector('.nav-list');
     
@@ -298,7 +298,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Animation on scroll
+    
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -313,7 +313,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, observerOptions);
 
-    // Observe elements for animation
+   
     document.querySelectorAll('.progress-item, .course-item').forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(20px)';

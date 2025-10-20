@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Mobile menu functionality - ИСПРАВЛЕННАЯ ЧАСТЬ
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const navList = document.querySelector('.nav-list');
     
@@ -22,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Close mobile menu when clicking outside
+    
     document.addEventListener('click', function(e) {
         if (navList && navList.style.display === 'flex' && 
             !e.target.closest('.nav') && 
@@ -31,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Elements
+    
     const contactForm = document.getElementById('contactFormMain');
     const contactName = document.getElementById('contactName');
     const contactEmail = document.getElementById('contactEmail');
@@ -46,11 +45,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const closeSuccessModal = document.getElementById('closeSuccessModal');
     const closeSuccess = document.getElementById('closeSuccess');
 
-    // Validation patterns
+    
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const namePattern = /^[a-zA-Zа-яА-ЯёЁ\s\-]{2,50}$/;
 
-    // Real-time validation
+    
     if (contactName) {
         contactName.addEventListener('input', function() {
             validateName();
@@ -69,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Validation functions
+    
     function validateName() {
         const value = contactName.value.trim();
         
@@ -126,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function() {
         return true;
     }
 
-    // Show error function
+    
     function showError(input, errorElement, message) {
         if (input && errorElement) {
             input.parentElement.classList.add('error');
@@ -135,7 +134,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Show success function
+    
     function showSuccess(input, errorElement) {
         if (input && errorElement) {
             input.parentElement.classList.remove('error');
@@ -144,27 +143,27 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Form submission
+    
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Validate all fields
+            
             const isNameValid = validateName();
             const isEmailValid = validateEmail();
             const isMessageValid = validateMessage();
             
             if (isNameValid && isEmailValid && isMessageValid) {
-                // Show loading state
+                
                 if (submitBtn) {
                     submitBtn.disabled = true;
                     submitBtn.classList.add('loading');
                     submitBtn.textContent = '';
                 }
                 
-                // Simulate API call (in real project, this would be actual form submission)
+                
                 setTimeout(() => {
-                    // Get form data
+                    
                     const formData = {
                         name: contactName.value.trim(),
                         email: contactEmail.value.trim(),
@@ -172,13 +171,13 @@ document.addEventListener('DOMContentLoaded', function() {
                         timestamp: new Date().toISOString()
                     };
                     
-                    // Save to localStorage (in real project, send to server)
+                    
                     saveContactMessage(formData);
                     
-                    // Show success modal
+                    
                     showSuccessModal();
                     
-                    // Reset form and button
+                    
                     contactForm.reset();
                     if (submitBtn) {
                         submitBtn.disabled = false;
@@ -186,14 +185,14 @@ document.addEventListener('DOMContentLoaded', function() {
                         submitBtn.textContent = '📨 Отправить сообщение';
                     }
                     
-                    // Remove success classes
+                    
                     document.querySelectorAll('.form-group').forEach(group => {
                         group.classList.remove('success');
                     });
                     
                 }, 2000);
             } else {
-                // Scroll to first error
+                
                 const firstError = document.querySelector('.error');
                 if (firstError) {
                     firstError.scrollIntoView({ 
@@ -205,7 +204,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Save contact message to localStorage
+    
     function saveContactMessage(formData) {
         let messages = JSON.parse(localStorage.getItem('contactMessages')) || [];
         messages.push(formData);
@@ -214,14 +213,13 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('Сообщение сохранено:', formData);
     }
 
-    // Show success modal
+    
     function showSuccessModal() {
         if (successModal) {
             successModal.classList.add('active');
         }
     }
 
-    // Close success modal
     function closeSuccessModalFunc() {
         if (successModal) {
             successModal.classList.remove('active');
@@ -236,14 +234,14 @@ document.addEventListener('DOMContentLoaded', function() {
         closeSuccess.addEventListener('click', closeSuccessModalFunc);
     }
 
-    // Close modal on outside click
+    
     window.addEventListener('click', function(e) {
         if (e.target === successModal) {
             closeSuccessModalFunc();
         }
     });
 
-    // Add animation to contact items
+    
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -258,7 +256,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, observerOptions);
 
-    // Observe contact items for animation
+    
     document.querySelectorAll('.contact-item, .additional-info').forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(20px)';
@@ -266,7 +264,7 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(el);
     });
 
-    // Auto-save draft
+    
     let draftTimeout;
     if (contactForm) {
         contactForm.addEventListener('input', function() {
@@ -284,7 +282,7 @@ document.addEventListener('DOMContentLoaded', function() {
         localStorage.setItem('contactDraft', JSON.stringify(draft));
     }
 
-    // Load draft on page load
+    
     function loadDraft() {
         const draft = JSON.parse(localStorage.getItem('contactDraft'));
         if (draft && contactName && contactEmail && contactMessage) {
@@ -294,12 +292,12 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Clear draft on successful submission
+    
     function clearDraft() {
         localStorage.removeItem('contactDraft');
     }
 
-    // Update form submission to clear draft
+    
     if (contactForm) {
         const originalSubmit = contactForm.onsubmit;
         contactForm.onsubmit = function(e) {
@@ -308,6 +306,6 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     }
 
-    // Load draft when page loads
+    
     loadDraft();
 });
